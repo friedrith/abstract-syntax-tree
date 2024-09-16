@@ -35,7 +35,7 @@ function visit(sourceFile: ts.SourceFile) {
   const exports = checker.getExportsOfModule(sourceFileSymbol)
 
   const components = exports.flatMap(e =>
-    getReactComponents(sourceFile.fileName, e, checker)
+    getReactComponents(sourceFile.fileName, e)
   )
 
   // console.log(
@@ -45,11 +45,7 @@ function visit(sourceFile: ts.SourceFile) {
   // )
 }
 
-function getReactComponents(
-  filename: string,
-  symbol: ts.Symbol,
-  checker: ts.TypeChecker
-) {
+function getReactComponents(filename: string, symbol: ts.Symbol) {
   return symbol.declarations.flatMap(declaration => {
     // console.log(
     //   'step3: declarations',
@@ -57,9 +53,9 @@ function getReactComponents(
     //   declaration.getText()
     // )
 
-    if (!ts.isFunctionDeclaration(declaration)) return []
+    if (!ts.isFunctionDeclaration(declaration)) return [] // we accept only components that are functions
 
-    const componentNameRegex = /^[A-Z][A-Za-z]+/ // starts with a capital letter
+    const componentNameRegex = /^[A-Z]/ // starts with a capital letter
 
     if (!componentNameRegex.test(declaration.name.text)) return []
 
