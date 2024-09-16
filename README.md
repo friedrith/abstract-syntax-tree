@@ -3,7 +3,7 @@
     Abstract Syntax Tree (AST)
   </h3>
   <p align="center">
-    <a href="https://friedrith.github.io/react-composition">Demo</a> | <a href="https://friedrith.github.io/react-composition/slides">Slides</a> | <a href="https://thibault-friedrich.medium.com/keep-your-react-components-maintainable-with-solid-react-composition-codecraftsmanship-4-2969834e9ffa">Article</a>
+    <a href="./typescript-compiler-api/">Code</a> | <a href="https://friedrith.github.io/abstract-syntax-tree/slides">Slides</a>
   </p>
 </div>
 
