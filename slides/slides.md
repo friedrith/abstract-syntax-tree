@@ -186,6 +186,6 @@ layout: two-cols
 
 <img width="300" height="300" src="/qrcode.svg" alt="QrCode Repository">
 
-[https://bit.ly/react-composition](https://bit.ly/react-composition)
+[Repository](https://github.com/friedrith/abstract-syntax-tree)
 
 </div>
