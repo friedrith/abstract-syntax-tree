@@ -3,7 +3,7 @@
     Abstract Syntax Tree (AST)
   </h3>
   <p align="center">
-    <a href="https://github.com/friedrith/abstract-syntax-tree/blob/master/typescript-compiler-api/src/ast.ts">Code</a> | <a href="https://friedrith.github.io/abstract-syntax-tree/slides">Slides</a>
+    <a href="https://github.com/friedrith/abstract-syntax-tree/blob/master/typescript-compiler-api/src/ast.ts">Code</a> | <a href="https://friedrith.github.io/abstract-syntax-tree">Slides</a>
   </p>
 </div>
 
