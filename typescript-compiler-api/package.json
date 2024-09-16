@@ -1,0 +1,13 @@
+{
+  "name": "typescript-compiler-api",
+  "scripts": {
+    "dev": "tsx ./src/ast.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  }
+}
