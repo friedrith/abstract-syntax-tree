@@ -5,7 +5,7 @@ theme: default
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: /background.png
 # some information about your slides (markdown enabled)
-title: Abstract Syntax Tree (AST) & Typescript API
+title: Abstract Syntax Tree (AST) & Typescript Compiler API
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.

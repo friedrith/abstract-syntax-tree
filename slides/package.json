@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /abstract-syntax-tree --out ../dist",
+    "build": "slidev build --base /abstract-syntax-tree/ --out ../dist",
     "dev": "slidev --open",
     "export": "slidev export"
   },
