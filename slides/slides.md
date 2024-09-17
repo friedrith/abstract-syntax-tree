@@ -3,7 +3,7 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: /background.png
 # some information about your slides (markdown enabled)
 title: Abstract Syntax Tree (AST) & Typescript API
 info: |
@@ -22,7 +22,7 @@ mdc: true
 layout: cover
 ---
 
-# Abstract Syntax Tree (AST) & Typescript API
+# Abstract Syntax Tree (AST) <br/> & Typescript API
 
 ## How I learned to stop worrying and love the AST
 
@@ -33,57 +33,96 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 <style>
+
 h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  color: white;
+}
+
+h2 {
+  color: #01a2ff;
+  margin-top: 10px;
+  font-weight: 500;
 }
 </style>
 
 ---
 
-# Thibault Friedrich
+# About me: Thibault Friedrich
 
 - Frontend developer for 10 years
 - Using _React_ for 6+ years and love it
-- Strong focus on Ux, Agile and Code craftsmanship
-  - how to create usable products
-  - how to keep flexibility
-  - how to write Clean Code
-- Indie hacker, looking for designer to collaborate with
-- Maintainer of [DesignSystemHub](https://design-system-hub.com), a solution to document your design system easier and faster than storybook
+- Strong focus on Ux, Agile and Code craftsmanship 
+  - ➡️ find my articles on Medium
+- Indie hacker (looking for designer for collaboration)
+- Maintainer of [DesignSystemHub](https://design-system-hub.com)
+  - Document your design system easier and faster than storybook
+  - <span v-mark.circle.orange>Automatic detection</span> of React components in your code
 
 ---
 
-## What is an AST (Abstract Syntax Tree)?
+# What is an AST (Abstract Syntax Tree)?
 
-When you try to analyze a language (programming or not):
+When you analyze a language like Javascript or English: 
+
 
 <div class="text-center text-2xl">
 "I love coding"
 </div>
 
-You have 2 steps:
+<div v-click>
 
-- lexical analysis to detect the tokens: <kbd>I</kbd> <kbd>love</kbd> <kbd>coding</kbd>
-- syntactic analysis to understand the relationship between tokens
+1. __lexical__ analysis to detect the tokens: <kbd>I</kbd> <kbd>love</kbd> <kbd>coding</kbd>
 
+</div>
+<div v-click>
+
+2. __syntactic__ analysis to understand the relationship between tokens
+
+<div class="flex flex-col items-center justify-center">
+
+```mermaid {theme: 'neutral', scale: 0.6}
+graph TD
+B[I love Coding] -->|Subject| C[I]
+B[I love Coding] -->|Verb| D[love]
+B[I love Coding] -->|Object| E[coding]
 ```
-sentence
-  |- subject: I
-  |- verb: love
-  |- object: coding
-```
 
-⬆️ This is an AST
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div v-click>
+
+<div class="flex flex-col items-center justify-center">
+<strong class="pr-10">This is an AST (Abstract Syntax Tree) ⬆️</strong>
+
+<img src="/boom.gif" class="w-50" />
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
 
 <div class="absolute left-60px bottom-20px text-xs">
 
-[Useful article about what is an AST](https://dev.to/balapriya/abstract-syntax-tree-ast-explained-in-plain-english-1h38)
+[Abstract Syntax Tree (AST) - Explained in Plain English](https://dev.to/balapriya/abstract-syntax-tree-ast-explained-in-plain-english-1h38)
 
 </div>
 
@@ -91,25 +130,23 @@ sentence
 
 # Why do I need to know about AST?
 
-Of course AST also exists to analyze source code.
-
-Few useful use cases:
+Sometimes, you need to parse the source code:
 
 - custom eslint rules
+- babel plugins, typescript, etc
 - detect React components in the code
-- it is used in all the compilers (Babel, TypeScript, etc.)
 
-Generally: to **parse code**.
+__You don't want to recreate a parser yourself.__ <span v-click>➡️ Use a parser and its __AST.__ </span>
 
-You don't want to recreate a parser yourself, you want to use an existing parser and you need to manipulate the result of this parser: an AST.
+<div v-click>
 
-The goal of this presentation is to share with you what I learned. Just giving you enough keys to not be scared the next time you need an AST. 😱
+[AST Explorer](https://astexplorer.net/) is a great tool to understand the AST of a language.
 
-➡️ Let's dive in a real example with TypeScript.
+</div>
 
 ---
 
-# [design-system-hub.com](https://design-system-hub.com)
+# Real example: [design-system-hub.com](https://design-system-hub.com)
 
 ![design system hub](/design-system-hub.png)
 
@@ -140,13 +177,19 @@ for (const sourceFile of program.getSourceFiles()) {
 }
 ```
 
-➡️ Demo
 
 <div class="absolute left-60px bottom-20px text-xs">
 
 [Using the Compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API)
 
 </div>
+
+---
+layout: center
+---
+
+# Demo time
+
 
 ---
 layout: image-right
@@ -157,13 +200,13 @@ backgroundSize: contain
 
 # Conclusion
 
-- Very light documentation
-- try and retry
-- use typescript to help you with the completion
-- [AST Explorer](https://astexplorer.net/) is your friend but not always enough
-- write unit tests to improve the coverage
 - very powerful
-- other very good example: [eslint custom rules](https://eslint.org/docs/latest/extend/custom-rules)
+- very light [documentation](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API)
+- try and retry
+- use typescript for Intellisense
+- write unit tests to improve the coverage and avoid regressions
+- [AST Explorer](https://astexplorer.net/) is your friend but not always enough
+- other example: [eslint custom rules](https://eslint.org/docs/latest/extend/custom-rules)
 
 ---
 layout: two-cols
