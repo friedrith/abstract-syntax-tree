@@ -7,7 +7,19 @@
   </p>
 </div>
 
-This is a demo project to show how to manipulate the AST in typescript. It is part of a speech at the [Typescript Montreal Meetup](https://www.meetup.com/typescript-montreal/events/301681223) of September 2024.
+This is a demo project to show few examples of Abstract Syntax Tree (AST) usages.
+
+## Projects
+
+- [typescript-compiler-api](./typescript-compiler-api): A simple project to show how to use TypeScript Compiler API to analyze code.
+
+
+## History
+
+Several versions of this project are available:
+
+- [First version](https://github.com/friedrith/abstract-syntax-tree/tree/typescript-montreal-meetup) presented at the [Typescript Montreal Meetup](https://www.meetup.com/typescript-montreal/events/301681223) of September 2024.
+
 
 ## License
 
