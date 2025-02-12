@@ -7,12 +7,7 @@ background: /background.png
 # some information about your slides (markdown enabled)
 title: Abstract Syntax Tree (AST) & Typescript Compiler API
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply unocss classes to the current slide
-# https://sli.dev/features/drawing
+  If you want to write custom eslint rules, babel plugins, or other code parsers, you need to use Abstract Syntax Trees (AST). But they are generally scary for developers due to their complexity. In this talk, we will go through a real situation to parse some typescript React code using an AST and the Typescript Compiler API.
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
@@ -26,7 +21,7 @@ layout: cover
 
 ## How I learned to stop worrying and love the AST
 
-Thibault Friedrich --- September 19th, 2024
+Thibault Friedrich --- February 26th, 2025
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
@@ -53,7 +48,6 @@ h2 {
 - Using _React_ for 6+ years and love it
 - Strong focus on Ux, Agile and Code craftsmanship 
   - ➡️ find my articles on Medium
-- Indie hacker (looking for designer for collaboration)
 - Maintainer of [DesignSystemHub](https://design-system-hub.com)
   - Document your design system easier and faster than storybook
   - <span v-mark.circle.orange>Automatic detection</span> of React components in your code
