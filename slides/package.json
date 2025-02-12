@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build --base /abstract-syntax-tree/ --out ../dist",
-    "dev": "slidev --open",
+    "dev": "slidev ",
     "export": "slidev export"
   },
   "dependencies": {
