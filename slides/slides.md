@@ -15,13 +15,27 @@ transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 layout: cover
+image: /completion.png
+backgroundSize: contain
+
+# https://confoo.ca/en/2025/feedback/AABB2D7FC079843F2B4CD62C4898BA8A
+# https://qrgenerator.org/transparent-qr/
 ---
+
+<div class="-mt-20">
 
 # Abstract Syntax Tree (AST) <br/> & Typescript API
 
 ## How I learned to stop worrying and love the AST
 
 Thibault Friedrich --- February 26th, 2025
+
+</div>
+
+<div class="absolute right-20 bottom-20 text-center">
+<img src="/qrcode-form-6.svg" class="w-30" />
+Feedback form
+</div>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
