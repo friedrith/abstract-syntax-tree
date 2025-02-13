@@ -172,6 +172,7 @@ When you analyze a language like Javascript or English:
 <div class="flex flex-row items-center justify-center">
 
 
+<div class="flex flex-col items-center justify-center">
 <div v-click>
 
 <div v-mark="{ at: 5, type: 'circle', color: 'orange' }">
@@ -184,18 +185,21 @@ B[I love Coding] -->|Object| E[coding]
 ```
 
 </div>
+</div>
+
+<img src="/left-arrow.svg" class="w-20 mt-2 mb-2" v-click="'5'" />
+
+<div class="text-orange" v-click="'5'">This is an AST (Abstract Syntax Tree) </div>
 
 </div>
 
 <div v-click>
 
-<div class="flex flex-row items-center justify-center">
-⬅️
+<div class="flex flex-row items-center justify-center ">
 
 <div class="flex flex-col items-center justify-center">
-<strong class="pr-10">This is an AST (Abstract Syntax Tree) </strong>
 
-<img src="/boom.gif" class="w-50" />
+<img src="/boom.gif" class="w-50 ml-20" />
 </div>
 </div>
 
