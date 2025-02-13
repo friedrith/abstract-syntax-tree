@@ -32,7 +32,7 @@ Thibault Friedrich --- February 26th, 2025
 
 </div>
 
-<div class="absolute right-20 bottom-20 text-center">
+<div class="absolute right-20 bottom-20 text-center" v-mark="{ at: 1, color: 'orange', type: 'circle' }">
 <img src="/qrcode-form-6.svg" class="w-30" />
 Feedback form
 </div>
@@ -54,21 +54,94 @@ h2 {
 }
 </style>
 
+<!--
+Today we will walk throught a real situation as a developer. This is not a theoretical talk but a practical one. We will see how to parse some typescript React code using an AST and the Typescript Compiler API. But I think the practice can be applied to other AST parsers. And I hope you will learn to love ASTs too.
+-->
+
+---
+layout: image-right
+image: /portrait.png
+backgroundSize: cover
+
 ---
 
 # About me: Thibault Friedrich
 
 - Frontend developer for 10 years
 - Using _React_ for 6+ years and love it
-- Strong focus on Ux, Agile and Code craftsmanship 
-  - ➡️ find my articles on Medium
+- Strong focus on Ux, Agile and Code craftsmanship  
+  - ➡️ find my articles on [Medium](https://medium.com/@thibault-friedrich)
 - Maintainer of [DesignSystemHub](https://design-system-hub.com)
-  - Document your design system easier and faster than storybook
-  - <span v-mark.circle.orange>Automatic detection</span> of React components in your code
+  - Documentation for design systems
+  - Storybook alternative
+  - zero config
+  - <span v-mark.highlight.orange>automatic detection</span> of React components
+
+---
+
+# Use case: [design-system-hub.com](https://design-system-hub.com)
+
+![design system hub](/design-system-hub-2.png)
+
+<div class="absolute top-30 left-15 text-white h-40 w-30" v-mark="{ at: 1, color: 'orange', type: 'circle' }"></div>
+
+
+<div class="absolute top-40 left-60 text-white h-30 w-50" v-mark="{ at: 2, color: 'orange', type: 'circle' }"></div>
+
+<div class="absolute bottom-15 right-75 text-white h-40 w-110" v-mark="{ at: 3, color: 'orange', type: 'circle' }"></div>
+
+
+<div class="absolute bottom-40 right-18 text-orange w-50 text-xl" >
+  
+  <div v-click="'1'">Need to find:</div>
+  <ul>
+      <li v-click>React components</li>
+      <li v-click>JsDoc</li>
+      <li v-click>Properties</li>
+  </ul>
+</div>
+
+<style>
+img {
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+</style>
+
+---
+
+# How to detect a React component in the code?
+
+```tsx
+type Props = {
+  children: React.ReactNode
+  variant: 'primary' | 'black' | 'basic'
+  onClick: () => void | Promise<void>
+}
+
+/**
+ * @deprecated
+ */
+const ButtonLegacy = ({ children, variant, onClick }: Props) => {
+  return <button onClick={onClick} className={style[variant]}>{children}</button>
+}
+```
+
+<div v-click class="mt-10">
+
+
+  __Long online search: the AST seems to be the solution__ 
+</div>
+<div v-click>
+  That's the moment you start to be scared and you think this project is too complex for you. 🤯😬
+</div>
+
 
 ---
 
 # What is an AST (Abstract Syntax Tree)?
+
+<div v-click>
 
 When you analyze a language like Javascript or English: 
 
@@ -77,16 +150,31 @@ When you analyze a language like Javascript or English:
 "I love coding"
 </div>
 
+</div>
+
+
+
+
 <div v-click>
 
 1. __lexical__ analysis to detect the tokens: <kbd>I</kbd> <kbd>love</kbd> <kbd>coding</kbd>
 
 </div>
+
 <div v-click>
 
 2. __syntactic__ analysis to understand the relationship between tokens
 
-<div class="flex flex-col items-center justify-center">
+</div>
+
+
+
+<div class="flex flex-row items-center justify-center">
+
+
+<div v-click>
+
+<div v-mark="{ at: 5, type: 'circle', color: 'orange' }">
 
 ```mermaid {theme: 'neutral', scale: 0.6}
 graph TD
@@ -97,24 +185,19 @@ B[I love Coding] -->|Object| E[coding]
 
 </div>
 
-
-
-
-
 </div>
-
-
-
-
-
 
 <div v-click>
 
+<div class="flex flex-row items-center justify-center">
+⬅️
+
 <div class="flex flex-col items-center justify-center">
-<strong class="pr-10">This is an AST (Abstract Syntax Tree) ⬆️</strong>
+<strong class="pr-10">This is an AST (Abstract Syntax Tree) </strong>
 
 <img src="/boom.gif" class="w-50" />
-
+</div>
+</div>
 
 
 
@@ -125,6 +208,9 @@ B[I love Coding] -->|Object| E[coding]
 
 
 </div>
+
+
+
 
 
 
