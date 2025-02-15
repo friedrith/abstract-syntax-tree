@@ -226,41 +226,7 @@ B[I love Coding] -->|Object| E[coding]
 
 ---
 
-# Why do I need to know about AST?
-
-Sometimes, you need to parse the source code:
-
-- custom eslint rules
-- babel plugins, typescript, etc
-- detect React components in the code
-
-__You don't want to recreate a parser yourself.__ <span v-click>➡️ Use a parser and its __AST.__ </span>
-
-<div v-click>
-
-[AST Explorer](https://astexplorer.net/) is a great tool to understand the AST of a language.
-
-</div>
-
----
-
-# Real example: [design-system-hub.com](https://design-system-hub.com)
-
-![design system hub](/design-system-hub.png)
-
-<div class="absolute bottom-30 right-30 text-white w-40 text-xl" v-click>Need to find the React components in the code</div>
-
-<style>
-img {
-  border-radius: 10px;
-  border: 1px solid #333;
-}
-
-</style>
-
----
-
-# Typescript Compiler API
+# Good news: Typescript Compiler API
 
 ```ts
 import ts from 'typescript'
@@ -305,6 +271,17 @@ backgroundSize: contain
 - write unit tests to improve the coverage and avoid regressions
 - [AST Explorer](https://astexplorer.net/) is your friend but not always enough
 - other example: [eslint custom rules](https://eslint.org/docs/latest/extend/custom-rules)
+- custom eslint rules
+- babel plugins, typescript, etc
+- detect React components in the code
+
+__You don't want to recreate a parser yourself.__ <span v-click>➡️ Use a parser and its __AST.__ </span>
+
+<div v-click>
+
+[AST Explorer](https://astexplorer.net/) is a great tool to understand the AST of a language.
+
+</div>
 
 ---
 layout: two-cols
