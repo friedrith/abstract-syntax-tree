@@ -46,6 +46,9 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'dist/'
+          # name: ${{ inputs.name }}
+          # retention-days: ${{ inputs.retention-days }}
+          # if-no-files-found: error
   deploy-gh-pages:
     runs-on: ubuntu-latest
     needs: build-slides
