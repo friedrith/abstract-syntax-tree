@@ -33,7 +33,7 @@ Thibault Friedrich --- February 26th, 2025
 </div>
 
 <div class="absolute right-20 bottom-20 text-center" v-mark="{ at: 1, color: 'orange', type: 'circle' }">
-<img src="/qrcode-form-6.svg" class="w-30" />
+<img src="/qrcode-form-dark-theme.svg" class="w-30" />
 Feedback form
 </div>
 
@@ -129,8 +129,8 @@ const ButtonLegacy = ({ children, variant, onClick }: Props) => {
 
 <div v-click class="mt-10">
 
+ **Long online search: You don't want to recreate a parser yourself.** <span v-click>➡️ Use an __AST__ parser. </span>
 
-  __Long online search: the AST seems to be the solution__ 
 </div>
 <div v-click>
   That's the moment you start to be scared and you think this project is too complex for you. 🤯😬
@@ -262,26 +262,17 @@ backgroundSize: contain
 
 ---
 
-# Conclusion
+# Conclusion: AST
 
+- don't be scared
 - very powerful
-- very light [documentation](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API)
+- write unit tests to avoid regressions
+- [AST Explorer](https://astexplorer.net/) is your friend
 - try and retry
-- use typescript for Intellisense
-- write unit tests to improve the coverage and avoid regressions
-- [AST Explorer](https://astexplorer.net/) is your friend but not always enough
-- other example: [eslint custom rules](https://eslint.org/docs/latest/extend/custom-rules)
-- custom eslint rules
-- babel plugins, typescript, etc
-- detect React components in the code
-
-__You don't want to recreate a parser yourself.__ <span v-click>➡️ Use a parser and its __AST.__ </span>
-
-<div v-click>
-
-[AST Explorer](https://astexplorer.net/) is a great tool to understand the AST of a language.
-
-</div>
+- other use cases: 
+  - [eslint custom rules](https://eslint.org/docs/latest/extend/custom-rules)
+  - babel plugins
+- typescript Compiler API is very easy to master
 
 ---
 layout: two-cols
@@ -290,6 +281,7 @@ layout: two-cols
 # Stay in contact
 
 
+- [https://github.com/friedrith/abstract-syntax-tree](https://github.com/friedrith/abstract-syntax-tree)
 - [https://www.linkedin.com/in/thibault-friedrich/](https://www.linkedin.com/in/thibault-friedrich/)
 - [https://github.com/friedrith](https://github.com/friedrith)
 - [https://medium.com/@thibault-friedrich](https://medium.com/@thibault-friedrich)
@@ -302,8 +294,8 @@ layout: two-cols
 
 <div class="text-center flex flex-col items-center">
 
-<img width="300" height="300" src="/qrcode.svg" alt="QrCode Repository">
+<img src="/qrcode-form.svg" class="h-60 w-60" alt="feedback form" />
 
-[Repository](https://github.com/friedrith/abstract-syntax-tree)
+Feedback form
 
 </div>
