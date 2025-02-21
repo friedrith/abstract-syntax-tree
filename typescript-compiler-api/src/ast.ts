@@ -5,7 +5,7 @@ import { visitSourceFile } from './visit-source-file'
  * Inspiration from https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#using-the-type-checker
  */
 
-export function findComponents(
+export function findReactComponents(
   fileNames: string[],
   tsConfig: ts.CompilerOptions
 ) {

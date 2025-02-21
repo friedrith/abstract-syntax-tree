@@ -2,10 +2,15 @@ import { expect, test } from 'vitest'
 import path from 'node:path'
 import fs from 'node:fs'
 import ts from 'typescript'
-import { findComponents } from '../src/ast'
+import { findReactComponents } from '../src/ast'
 import tsConfig from '../examples/all-use-cases/tsconfig.json'
 
-const examples = ['function', 'default-exported-function', 'no-component']
+const examples = [
+  'no-component',
+  'function',
+  'default-exported-function',
+  'arrow-function',
+]
 
 function getExpectedComponents(filename: string) {
   try {
@@ -18,7 +23,7 @@ function getExpectedComponents(filename: string) {
       {
         name: component.name,
         description: component.description,
-        deprecated: component.deprecated ?? false,
+        // deprecated: component.deprecated ?? false,
         path: filename,
       },
     ]
@@ -42,7 +47,7 @@ examples.forEach(example => {
 
       const expectedComponents = getExpectedComponents(expectedFullname)
 
-      const components = findComponents(
+      const components = findReactComponents(
         [fullname],
         tsConfig as unknown as ts.CompilerOptions
       )

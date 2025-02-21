@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { findComponents } from './ast'
+import { findReactComponents } from './ast'
 
 const projectPath = path.join(__dirname, process.argv[2])
 
@@ -13,9 +13,9 @@ const fileNames = fs
 
 const tsConfig = JSON.parse(fs.readFileSync(file('tsconfig.json'), 'utf8'))
 
-const components = findComponents(fileNames, tsConfig).map(cleanFilename)
+const components = findReactComponents(fileNames, tsConfig).map(cleanFilename)
 
-// console.clear()
+console.clear()
 console.log('components', components)
 
 function cleanFilename({ path, ...component }: { path: string }) {

@@ -17,30 +17,44 @@ function getReactComponentsFromExport(
   exportSymbol: ts.Symbol,
   checker: ts.TypeChecker
 ) {
-  return exportSymbol.declarations.flatMap(declaration =>
-    getReactComponents(declaration, checker)
-  )
+  return exportSymbol.declarations
+    .map(declaration => getReactComponent(declaration, checker))
+    .filter(Boolean)
+    .map(g => g as object)
 }
 
-function getReactComponents(
+function getReactComponent(
   declaration: ts.Declaration,
   checker: ts.TypeChecker
 ) {
-  if (!ts.isFunctionDeclaration(declaration)) return [] // we accept only components that are functions
-
-  if (!isPascalCase(declaration.name.text)) return []
-
-  return [
-    {
-      name: declaration.name.text,
+  if (
+    ts.isFunctionDeclaration(declaration) &&
+    isPascalCase(declaration.name.getText())
+  ) {
+    return {
+      name: declaration.name.getText(),
       description: ts.displayPartsToString(
         checker
           .getTypeAtLocation(declaration)
           .symbol?.getDocumentationComment(checker)
       ),
-      deprecated: ts
-        .getJSDocTags(declaration)
-        .some(tag => tag.tagName.text === 'deprecated'),
-    },
-  ]
+    }
+  }
+
+  if (
+    ts.isVariableDeclaration(declaration) &&
+    ts.isArrowFunction(declaration.initializer) &&
+    isPascalCase(declaration.name.getText())
+  ) {
+    return {
+      name: declaration.name?.getText(),
+      description: ts.displayPartsToString(
+        checker
+          .getTypeAtLocation(declaration)
+          .symbol?.getDocumentationComment(checker)
+      ),
+    }
+  }
+
+  return null
 }
