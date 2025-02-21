@@ -11,7 +11,7 @@ This is a demo project to show few examples of Abstract Syntax Tree (AST) usages
 
 ## Projects
 
-- [typescript-compiler-api](./typescript-compiler-api): A simple project to show how to use TypeScript Compiler API to analyze code.
+- [typescript-compiler-api](./typescript-compiler-api): A simple project to show how to use TypeScript Compiler API to analyze code. A more complete version is available in [design-system-hub](https://github.com/interaction-dynamics/design-system-hub/tree/master/packages/node-react-parser)
 
 
 ## History

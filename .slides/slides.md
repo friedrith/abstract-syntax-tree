@@ -282,13 +282,16 @@ layout: two-cols
 
 
 - [https://github.com/friedrith/abstract-syntax-tree](https://github.com/friedrith/abstract-syntax-tree)
-- [https://www.linkedin.com/in/thibault-friedrich/](https://www.linkedin.com/in/thibault-friedrich/)
-- [https://github.com/friedrith](https://github.com/friedrith)
-- [https://medium.com/@thibault-friedrich](https://medium.com/@thibault-friedrich)
-- [thibault.friedrich@interaction-dynamics.io](mailto:thibault.friedrich@interaction-dynamics.io)
-- [https://interaction-dynamics.io](https://interaction-dynamics.io)
+- [https://thibaultfriedrich.io](https://thibaultfriedrich.io)
 - [https://design-system-hub.com](https://design-system-hub.com)
 
+
+<div class="flex flex-row items-center mt-10 gap-4">
+<a href="https://www.linkedin.com/in/thibault-friedrich/" style="border: 0;"><img src="/linkedin.svg" class="w-10" alt="linkedin" /></a>
+<a href="https://github.com/friedrith" style="border: 0;"><img src="/github.svg" class="w-10" alt="github" /></a>
+<a href="https://x.com/R_Thibault_Oliw" style="border: 0;"><img src="/x.svg" class="w-10" alt="x" /></a>
+<a href="https://medium.com/@thibault-friedrich" style="border: 0;"><img src="/medium.svg" class="w-10" alt="medium" /></a>
+</div>
 
 ::right::
 
