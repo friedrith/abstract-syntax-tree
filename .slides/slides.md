@@ -234,11 +234,10 @@ import ts from 'typescript'
 const program = ts.createProgram(fileNames, tsConfig)
 const checker = program.getTypeChecker()
 
-for (const sourceFile of program.getSourceFiles()) {
-  if (!sourceFile.isDeclarationFile) {
-    visit(sourceFile) // <- do something with the AST
-  }
-}
+return program
+  .getSourceFiles()
+  .filter(sourceFile => !sourceFile.isDeclarationFile)
+  .flatMap(sourceFile => visitSourceFile(sourceFile, checker))
 ```
 
 
