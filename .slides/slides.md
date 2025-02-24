@@ -71,6 +71,7 @@ backgroundSize: cover
 - Using _React_ for 6+ years and love it
 - Strong focus on Ux, Agile and Code craftsmanship  
   - ➡️ find my articles on [Medium](https://medium.com/@thibault-friedrich)
+- Implementing design systems for 3 years
 - Maintainer of [DesignSystemHub](https://design-system-hub.com)
   - Documentation for design systems
   - Storybook alternative
@@ -79,16 +80,27 @@ backgroundSize: cover
 
 ---
 
+# Spoiler
+
+- Instead of focusing on the theory, we will focus on the practice
+- Discover AST through a real use case
+- Understand the Typescript Compiler API
+- Can be reproduce with other AST generators
+- for beginners: don't be scared
+
+
+---
+
 # Use case: [design-system-hub.com](https://design-system-hub.com)
 
 ![design system hub](/design-system-hub-2.png)
 
-<div class="absolute top-30 left-15 text-white h-40 w-30" v-mark="{ at: 1, color: 'orange', type: 'circle' }"></div>
+<div class="absolute top-40 left-15 text-white h-40 w-30" v-mark="{ at: 1, color: 'orange', type: 'circle' }"></div>
 
 
-<div class="absolute top-40 left-60 text-white h-30 w-50" v-mark="{ at: 2, color: 'orange', type: 'circle' }"></div>
+<div class="absolute top-50 left-60 text-white h-30 w-50" v-mark="{ at: 2, color: 'orange', type: 'circle' }"></div>
 
-<div class="absolute bottom-15 right-75 text-white h-40 w-110" v-mark="{ at: 3, color: 'orange', type: 'circle' }"></div>
+<div class="absolute bottom-5 right-75 text-white h-40 w-110" v-mark="{ at: 3, color: 'orange', type: 'circle' }"></div>
 
 
 <div class="absolute bottom-40 right-18 text-orange w-50 text-xl" >
@@ -105,6 +117,7 @@ backgroundSize: cover
 img {
   border-radius: 10px;
   border: 1px solid #333;
+  margin-top: 50px;
 }
 </style>
 
@@ -129,7 +142,7 @@ const ButtonLegacy = ({ children, variant, onClick }: Props) => {
 
 <div v-click class="mt-10">
 
- **Long online search: You don't want to recreate a parser yourself.** <span v-click>➡️ Use an __AST__ parser. </span>
+ **Long online search: You don't want to recreate a parser yourself.** <span v-click>➡️ Use an __AST__ generator. </span>
 
 </div>
 <div v-click>
