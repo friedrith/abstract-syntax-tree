@@ -87,6 +87,7 @@ backgroundSize: cover
 - Understand the Typescript Compiler API
 - Can be reproduce with other AST generators
 - for beginners: don't be scared
+- We will dive into the code
 
 
 ---
