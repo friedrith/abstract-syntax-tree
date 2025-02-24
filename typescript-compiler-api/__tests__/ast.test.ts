@@ -23,7 +23,7 @@ function getExpectedComponents(filename: string) {
       {
         name: component.name,
         description: component.description,
-        // deprecated: component.deprecated ?? false,
+        deprecated: component.deprecated ?? false,
         path: filename,
       },
     ]

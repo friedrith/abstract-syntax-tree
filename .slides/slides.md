@@ -85,8 +85,9 @@ backgroundSize: cover
 - Instead of focusing on the theory, we will focus on the practice
 - Discover AST through a real use case
 - Understand the Typescript Compiler API
-- Can be reproduce with other AST generators
-- for beginners: don't be scared
+- Won't be a complete guide
+- Methdology can be reproduced with other AST generators and use cases
+- Beginner friendly
 - We will dive into the code
 
 
