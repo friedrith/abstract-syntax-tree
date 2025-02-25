@@ -296,6 +296,9 @@ layout: two-cols
 
 - Shoot me your questions
 
+
+<div class="mt-20"></div>
+
 # Stay in contact
 
 
