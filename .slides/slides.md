@@ -292,6 +292,10 @@ backgroundSize: contain
 layout: two-cols
 ---
 
+# Questions ?
+
+- Shoot me your questions
+
 # Stay in contact
 
 
