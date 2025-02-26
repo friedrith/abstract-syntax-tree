@@ -86,9 +86,9 @@ backgroundSize: cover
 - Discover AST through a real use case
 - Understand the Typescript Compiler API
 - Won't be a complete guide
-- Methdology can be reproduced with other AST generators and use cases
+- Methodology can be reproduced with other AST generators and use cases
 - Beginner friendly
-- We will dive into the code
+- We will dive into a lot of code
 
 
 ---
@@ -251,8 +251,7 @@ const checker = program.getTypeChecker()
 
 return program
   .getSourceFiles()
-  .filter(sourceFile => !sourceFile.isDeclarationFile)
-  .flatMap(sourceFile => visitSourceFile(sourceFile, checker))
+  .flatMap(sourceFile => ({ path: sourceFile.fileName }))
 ```
 
 
