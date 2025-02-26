@@ -1,6 +1,5 @@
 import ts from 'typescript'
 import { visitSourceFile } from './visit-source-file'
-import path from 'path'
 
 /**
  * Inspiration from https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#using-the-type-checker
@@ -15,5 +14,6 @@ export function findReactComponents(
 
   return program
     .getSourceFiles()
-    .map(sourceFile => ({ path: sourceFile.fileName }))
+    .filter(sourceFile => !sourceFile.isDeclarationFile)
+    .flatMap(sourceFile => visitSourceFile(sourceFile, checker))
 }

@@ -17,5 +17,46 @@ function getReactComponentsFromExport(
   exportSymbol: ts.Symbol,
   checker: ts.TypeChecker
 ) {
-  return {}
+  return exportSymbol.declarations
+    .map(declaration => getReactComponent(declaration, checker))
+    .filter(Boolean)
+    .map(g => g as object)
 }
+
+function getReactComponent(
+  declaration: ts.Declaration,
+  checker: ts.TypeChecker
+) {
+  if (ts.isFunctionDeclaration(declaration) && isPascalCase(declaration.name.getText())) {
+    return {
+      name: declaration.name.getText(),
+      description: ts.displayPartsToString(
+        checker
+          .getTypeAtLocation(declaration)
+          .symbol?.getDocumentationComment(checker)
+        
+      ),
+      deprecated: checker
+      .getTypeAtLocation(declaration)
+      .symbol?.getJsDocTags(checker)
+      .some(t => t.name === 'deprecated'),
+    }
+  }
+
+  if (ts.isVariableDeclaration(declaration) && ts.isArrowFunction(declaration.initializer) && isPascalCase(declaration.name.getText())) {
+    return {
+      name: declaration.name.getText(),
+      description: ts.displayPartsToString(
+        checker
+          .getTypeAtLocation(declaration)
+          .symbol?.getDocumentationComment(checker)
+      ),
+      deprecated: checker
+        .getTypeAtLocation(declaration)
+        .symbol?.getJsDocTags(checker)
+        .some(t => t.name === 'deprecated'),
+    }
+  }
+  return null
+}
+

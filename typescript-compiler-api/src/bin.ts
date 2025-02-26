@@ -16,7 +16,7 @@ const tsConfig = JSON.parse(fs.readFileSync(file('tsconfig.json'), 'utf8'))
 const components = findReactComponents(fileNames, tsConfig).map(cleanFilename)
 
 console.clear()
-console.log('components', components)
+console.log('components =', components)
 
 function cleanFilename({ path, ...component }: { path: string }) {
   return {
