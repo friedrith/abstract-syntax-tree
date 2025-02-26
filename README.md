@@ -19,7 +19,7 @@ This is a demo project to show few examples of Abstract Syntax Tree (AST) usages
 Several versions of this project are available:
 
 - [First version](https://github.com/friedrith/abstract-syntax-tree/tree/typescript-montreal-meetup) presented at the [Typescript Montreal Meetup](https://www.meetup.com/typescript-montreal/events/301681223) of September 2024.
-- [Second version](https://github.com/friedrith/abstract-syntax-tree/master) presented at the [https://confoo.ca/en/2025] of February 2025.
+- [Second version](https://github.com/friedrith/abstract-syntax-tree/master) presented at the [Confoo Conference](https://confoo.ca/en/2025) of February 2025.
 
 
 ## License
